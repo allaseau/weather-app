@@ -1,4 +1,4 @@
-/*SEARCH BY USING A CITY NAME*/
+/*Recherche Ville*/
 const form = document.querySelector(".top-banner form");
 const input = document.querySelector(".top-banner input");
 const msg = document.querySelector(".top-banner .msg");
@@ -9,7 +9,7 @@ form.addEventListener("submit", e => {
     e.preventDefault();
     let inputVal = input.value;
 
-    //check if there's already a city
+    //check si déjà une ville
     const listItems = list.querySelectorAll(".ajax-section .city");
     const listItemsArray = Array.from(listItems);
 
@@ -39,7 +39,7 @@ form.addEventListener("submit", e => {
         }
     }
 
-    //ajax here
+    //ajax 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
     fetch(url)
